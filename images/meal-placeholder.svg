@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Photo coming soon">
+  <rect width="600" height="450" fill="#8a9a5b"/>
+  <rect width="600" height="450" fill="#556B2F" opacity=".55"/>
+  <ellipse cx="300" cy="250" rx="130" ry="26" fill="#263015" opacity=".35"/>
+  <path d="M170 200h260a130 100 0 0 1-260 0z" fill="#fbfaf4"/>
+  <circle cx="250" cy="190" r="26" fill="#d9b44a"/>
+  <circle cx="305" cy="178" r="30" fill="#8a9a5b"/>
+  <circle cx="355" cy="192" r="24" fill="#c4572f"/>
+  <text x="300" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#fbfaf4" font-weight="bold">Photo coming soon</text>
+</svg>

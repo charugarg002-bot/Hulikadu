@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Hulikadu FPC logo (placeholder)">
+  <!-- PLACEHOLDER LOGO: no logo file was found in the supplied material.
+       Replace this file (keep the name logo.svg) or change the <img src> in index.html. -->
+  <circle cx="60" cy="60" r="58" fill="#556B2F"/>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#d9b44a" stroke-width="2"/>
+  <path d="M60 94V54" stroke="#fbfaf4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 60C60 40 44 30 28 32C28 50 40 62 60 60Z" fill="#fbfaf4"/>
+  <path d="M60 52C60 34 74 24 92 26C92 44 80 55 60 52Z" fill="#d9b44a"/>
+  <path d="M34 96h52" stroke="#fbfaf4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M44 100h32" stroke="#8a9a5b" stroke-width="3" stroke-linecap="round"/>
+</svg>
