@@ -5,7 +5,7 @@
      CONFIG - set the WhatsApp number here (country code + number, digits
      only, e.g. 919876543210). Every WhatsApp button reads from this.
      ------------------------------------------------------------------ */
-  const WHATSAPP_NUMBER = '910000000000'; // TODO: replace with the FPC's real number
+  const WHATSAPP_NUMBER = ' 9880862058'; // TODO: replace with the FPC's real number
   const WHATSAPP_MESSAGE = 'Hello Hulikadu FPC, I would like to know more about your organic produce.';
 
   const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
