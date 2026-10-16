@@ -5,7 +5,7 @@
      CONFIG - set the WhatsApp number here (country code + number, digits
      only, e.g. 919876543210). Every WhatsApp button reads from this.
      ------------------------------------------------------------------ */
-  const WHATSAPP_NUMBER = '919880862058';
+  const WHATSAPP_NUMBER = '919901062058';
   const WHATSAPP_MESSAGE = 'Hello Hulikadu FPC, I would like to know more about your organic produce.';
 
   /* Paste a WhatsApp Community / Channel invite link here once created
