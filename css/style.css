@@ -17,6 +17,9 @@
   --border:       #dfe3cf;
   --whatsapp:     #25D366;
   --whatsapp-dk:  #1da851;
+  --kharif:       #556B2F;   /* season colours on the harvest wheel */
+  --rabi:         #b8891f;
+  --summer:       #c0612f;
 
   --radius:       14px;
   --shadow:       0 6px 24px rgba(38, 48, 21, .10);
@@ -30,7 +33,7 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 
 body {
   margin: 0;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Poppins', 'Noto Sans Kannada', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
   background: var(--cream);
   line-height: 1.65;
@@ -93,7 +96,7 @@ p { margin: 0 0 1em; }
   max-height: 0; overflow: hidden;
   transition: max-height .3s ease;
 }
-.primary-nav.open { max-height: 360px; }
+.primary-nav.open { max-height: 420px; }
 .primary-nav ul { padding: .5rem 1rem 1rem; display: flex; flex-direction: column; gap: .25rem; }
 .primary-nav a {
   display: block; padding: .7rem .9rem; border-radius: 10px;
@@ -210,6 +213,86 @@ h2 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 700; }
 }
 .chips li:hover { background: var(--olive); color: #fff; border-color: var(--olive); }
 
+/* ---------- Seasons wheel ---------- */
+.seasons-grid { display: grid; gap: 2.5rem; align-items: center; }
+.wheel-wrap { width: min(100%, 440px); margin-inline: auto; }
+.wheel { width: 100%; height: auto; display: block; overflow: visible; }
+
+.s-arc { fill: none; stroke-width: 10; stroke-linecap: round; opacity: .3; transition: opacity .3s; }
+.s-arc.kharif { stroke: var(--kharif); }
+.s-arc.rabi   { stroke: var(--rabi); }
+.s-arc.summer { stroke: var(--summer); }
+.wheel[data-season="kharif"] .s-arc.kharif,
+.wheel[data-season="rabi"] .s-arc.rabi,
+.wheel[data-season="summer"] .s-arc.summer { opacity: 1; }
+
+.wm { cursor: pointer; outline: none; }
+.wm path { fill: var(--white); stroke: var(--border); stroke-width: 1; transition: fill .2s; }
+.wm:hover path { fill: #e3e8cc; }
+.wm text {
+  fill: var(--muted); font-size: 15px; font-weight: 500;
+  text-anchor: middle; dominant-baseline: central; pointer-events: none;
+}
+.wm.active text { fill: #fff; font-weight: 600; }
+.wheel[data-season="kharif"] .wm.active path { fill: var(--kharif); }
+.wheel[data-season="rabi"] .wm.active path   { fill: var(--rabi); }
+.wheel[data-season="summer"] .wm.active path { fill: var(--summer); }
+.wm:focus-visible path { stroke: var(--gold); stroke-width: 3; }
+
+.hub { fill: var(--olive-deep); }
+.wheel > text { text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.hub-name  { fill: var(--gold); font-size: 17px; font-weight: 600; }
+.hub-kn    { fill: #fff; font-size: 22px; font-weight: 600; }
+.hub-count { fill: #cfd5b8; font-size: 13px; }
+
+.season-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.1rem; margin-top: 1.2rem; font-size: .85rem; }
+.season-legend li { display: flex; align-items: center; gap: .35rem; }
+.season-legend li::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--kharif); }
+.season-legend li.rabi::before   { background: var(--rabi); }
+.season-legend li.summer::before { background: var(--summer); }
+.season-legend small { color: var(--muted); }
+
+.season-label { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--olive); margin-bottom: 1rem; }
+.season-label span { letter-spacing: 0; margin-left: .3rem; }
+.season-crops { display: grid; gap: .7rem; }
+.season-crops li {
+  display: flex; align-items: center; gap: .9rem;
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: .7rem .9rem;
+  animation: cropIn .35s ease both;
+}
+.season-crops i {
+  flex: none; width: 42px; height: 42px; display: grid; place-items: center;
+  border-radius: 10px; background: var(--olive-tint); color: var(--olive); font-size: 1.1rem;
+}
+.season-crops span { display: flex; flex-direction: column; font-weight: 500; line-height: 1.3; }
+.season-crops small { color: var(--muted); font-weight: 400; font-size: .85rem; }
+.season-note { margin: 1rem 0 0; font-size: .82rem; font-style: italic; color: var(--muted); }
+@keyframes cropIn { from { opacity: 0; transform: translateY(6px); } }
+
+/* ---------- WhatsApp community ---------- */
+.community { padding: 4.5rem 0; background: linear-gradient(135deg, #a9502a, var(--summer) 55%, #d98a4a); color: #fff; }
+.community-grid { display: grid; gap: 2.5rem; align-items: center; }
+.community h2 { color: #fff; font-size: clamp(2rem, 6vw, 3.4rem); letter-spacing: -.01em; }
+.community-lead { font-size: clamp(1.05rem, 2.6vw, 1.25rem); max-width: 560px; margin-bottom: 1.8rem; }
+.community .btn-light i { color: var(--whatsapp-dk); font-size: 1.3rem; }
+.community-links { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; margin: 1.6rem 0 0; }
+.community-links a { color: #fff; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.community-links a:hover { color: var(--olive-deep); }
+
+.wa-preview {
+  width: min(100%, 360px); margin-inline: auto; border-radius: 18px; overflow: hidden;
+  background: #efe7dc; box-shadow: var(--shadow-lg); color: var(--text);
+}
+.wa-preview-head { display: flex; align-items: center; gap: .6rem; padding: .9rem 1.1rem; background: #075e54; color: #fff; font-weight: 600; }
+.wa-preview-head i { font-size: 1.3rem; }
+.wa-bubble {
+  position: relative; margin: 1.1rem; padding: .8rem 1rem 1.4rem; border-radius: 0 12px 12px 12px;
+  background: #fff; font-size: .9rem; box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+}
+.wa-bubble p { margin: 0 0 .4rem; }
+.wa-bubble ul { list-style: disc; padding-left: 1.2rem; margin-bottom: .5rem; }
+.wa-bubble time { position: absolute; right: .7rem; bottom: .35rem; font-size: .7rem; color: var(--muted); }
+
 /* ---------- Gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; grid-auto-flow: dense; gap: .7rem; }
 .g-item {
@@ -292,6 +375,7 @@ h2 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 700; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 160px; }
   .wa-tip { display: inline; }
+  .season-crops { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* =========================================================
@@ -311,6 +395,9 @@ h2 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 700; }
 
   .about-grid { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 4rem; }
   .contact-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .seasons-grid { grid-template-columns: minmax(0, 440px) 1fr; gap: 4rem; }
+  .community-grid { grid-template-columns: 1.4fr 1fr; gap: 4rem; }
+  .community { padding: 6rem 0; }
   .section { padding: 6rem 0; }
 }
 

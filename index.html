@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,6 +33,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#what-we-do">What We Do</a></li>
           <li><a href="#products">Products</a></li>
+          <li><a href="#seasons">Seasons</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
@@ -199,6 +200,34 @@
       </div>
     </section>
 
+    <!-- ===== 4b. Seasons wheel ===== -->
+    <section class="section section-alt" id="seasons" aria-labelledby="seasons-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-tag">Seasons</p>
+          <h2 id="seasons-title">What grows, and when</h2>
+          <p>Three seasons a year at the forest edge. Hover over (or tap) a month to see what our farmers harvest.</p>
+        </header>
+
+        <div class="seasons-grid">
+          <div class="wheel-wrap">
+            <svg class="wheel" id="seasonWheel" viewBox="-200 -200 400 400" role="group" aria-label="Harvest calendar - choose a month"></svg>
+            <ul class="season-legend">
+              <li class="kharif">Kharif <span lang="kn">ಮುಂಗಾರು</span> <small>Jun&ndash;Oct</small></li>
+              <li class="rabi">Rabi <span lang="kn">ಹಿಂಗಾರು</span> <small>Nov&ndash;Feb</small></li>
+              <li class="summer">Summer <span lang="kn">ಬೇಸಿಗೆ</span> <small>Mar&ndash;May</small></li>
+            </ul>
+          </div>
+
+          <div class="season-panel" aria-live="polite">
+            <p class="season-label" id="seasonLabel"></p>
+            <ul class="season-crops" id="seasonCrops"></ul>
+            <p class="season-note">Harvest months are indicative and being confirmed with our farmers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 5. Gallery ===== -->
     <section class="section section-alt" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
@@ -257,6 +286,28 @@
             <img src="images/photo13.jpg" alt="Woman farmer holding a harvested bunch of finger millet" loading="lazy">
             <figcaption>Finger Millet (Ragi)</figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5b. WhatsApp community ===== -->
+    <section class="community" id="community" aria-labelledby="community-title">
+      <div class="container community-grid">
+        <div>
+          <h2 id="community-title">Hear when the harvest is in.</h2>
+          <p class="community-lead">WhatsApp us the word <strong>HULI</strong> and we will send you what is fresh each week.</p>
+          <a href="#" class="btn btn-light btn-lg" id="waJoin" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Join on WhatsApp
+          </a>
+          <p class="community-links">
+            <a href="tel:+919880862058">Phone: +91 98808 62058</a>
+            <a href="mailto:prasadgk12@gmail.com">Email: prasadgk12@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="wa-preview" aria-hidden="true">
+          <div class="wa-preview-head"><i class="fa-brands fa-whatsapp"></i> Hulikadu Harvest</div>
+          <div class="wa-bubble" id="waPreview"></div>
         </div>
       </div>
     </section>
